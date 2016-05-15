@@ -1,0 +1,7 @@
+<h1 class="page-header">Chamadas</h1>
+
+<ul>
+    <li (click)="onSelect(chamada)" *ngFor="let chamada of chamadas | async">
+        <button (click)="deleteChamada(chamada)">[x]</button> <span>{{chamada.id}}</span> {{chamada.titulo}}
+    </li>
+</ul>

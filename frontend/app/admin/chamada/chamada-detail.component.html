@@ -1,0 +1,72 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Poder da Rede</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a>Sobre Nós</a></li>
+                <li><a>Mais Vídeos</a></li>
+                <li><a>Contato</a></li>
+                <li><a>Inscrever</a></li>
+            </ul>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 class="page-header">{{chamada.titulo}}</h1>
+
+            <p class="lead" [innerHTML]="chamada.texto | nl2br"></p>
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="{{chamada.midia}}"></iframe>
+            </div>
+
+            <div [hidden]="!chamada.aceitaInscricao">
+                <br>
+                <br>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <p class="lead">
+                            Increva-se para receber detalhes!
+                        </p>
+                        <div class="col-sm-12">
+                            <form role="form" [ngFormModel]="capturaForm" (ngSubmit)="onSubmit(capturaForm.value)">
+
+                                <div class="form-group label-floating">
+                                    <label class="control-label" for="email">Digite seu E-Mail</label>
+                                    <input class="form-control" [(ngModel)]="captura.email" id="email" type="email" ngControl="email">
+                                    <control-messages control="email"></control-messages>
+                                    <p class="help-block">Informe o seu E-Mail</p>
+                                </div>
+
+                                <button class="btn btn-default" type="submit">Cadastrar!</button>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<footer>
+    <div class="container">
+        <div class="row">
+            <p>Rodrigo Cipriani &copy; 2016 Company, Inc.</p>
+        </div>
+    </div>
+</footer>
