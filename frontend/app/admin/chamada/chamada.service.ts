@@ -37,6 +37,7 @@ export class ChamadaService {
 
         this._dataStore = { chamadas: [], chamada: {
             'id': null,
+            'slug': "",
             'titulo': "",
             'texto': "",
             'midia': "",
@@ -67,15 +68,33 @@ export class ChamadaService {
             .map( (responseData) => {
                 let data =  responseData.json();
                 if (data) {
-                    let result: Chamada = new Chamada(data.id,
-                                        data.titulo,
-                                        data.texto,
-                                        data.midia,
-                                        data.aceitaInscricao);;
-                    return result;
+                    return this.buildChamada(data);
                 }
             });
 
+    }
+
+    findChamadaBySlug(slug: string) {
+
+        // return an observable
+        return this._http.get(`${this._baseUrl}/find/slug/` + slug)
+            .map( (responseData) => {
+                let data =  responseData.json();
+                if (data) {
+                    return this.buildChamada(data);
+                }
+            });
+
+    }
+
+    private buildChamada(data){
+      let result: Chamada = new Chamada(data.id,
+                          data.slug,
+                          data.titulo,
+                          data.texto,
+                          data.midia,
+                          data.aceitaInscricao);;
+      return result;
     }
 
     capturar(chamadaId : number, email : string) {
@@ -123,9 +142,8 @@ export class ChamadaService {
 
         this._http.put(`${this._baseUrl}/update/${chamada.id}`, chamadaJson, {
             headers: headers
-        })
-            .map(response => response.json()).subscribe(data => {
-console.log("Update Cahmada", data);
+        }).map(response => response.json()).subscribe(data => {
+              console.log("Update Cahmada", data);
 
 // TODO Colocar aqui que se não fizer update tem que avisar o usuario
 

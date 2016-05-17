@@ -36,6 +36,16 @@ router.get('/', function(req, res) {
 
     })
 
+    .get('/find/slug/:slug', function(req, res) {
+
+        models.Chamada.findOne({
+            where: ["slug = '" + req.params.slug + "'"]
+        }).then(function(chamada) {
+            res.json(chamada);
+        });
+
+    })
+
     .get('/delete/:id', function(req, res) {
 
         var chamada = {
@@ -67,7 +77,7 @@ router.get('/', function(req, res) {
         models.Chamada.update(chamadaOri, {
             where: ["id = '" + req.params.id + "'"]
         }).then(function(affectedRows) {
-            
+
             if(affectedRows > 0){
                  res.json(chamadaOri);
             }

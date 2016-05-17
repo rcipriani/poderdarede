@@ -38,6 +38,7 @@ export class ChamadaAddComponent implements OnInit {
     ) {
         this.chamadaForm = _formBuilder.group({
             'id': [''],
+            'slug': ['', Validators.required],
             'titulo': ['', Validators.required],
             'texto': ['', Validators.required],
             'midia': ['', Validators.compose([Validators.required])],
@@ -61,6 +62,7 @@ export class ChamadaAddComponent implements OnInit {
         }
         this.chamada = {
             'id': null,
+            'slug': "",
             'titulo': "",
             'texto': "",
             'midia': "",
@@ -72,6 +74,7 @@ export class ChamadaAddComponent implements OnInit {
         } else {
             this.chamada = {
                 'id': null,
+                'slug': "",
                 'titulo': "",
                 'texto': "",
                 'midia': "",

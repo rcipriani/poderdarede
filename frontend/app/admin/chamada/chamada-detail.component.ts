@@ -26,7 +26,7 @@ import {Nl2BrPipe} from '../../pipe/nl2br.pipe';
 })
 export class ChamadaDetailComponent implements OnInit {
 
-    id: number;
+    slug: string;
     chamada: Chamada;
     capturaForm: ControlGroup;
     captura: Captura
@@ -43,26 +43,29 @@ export class ChamadaDetailComponent implements OnInit {
     }
 
     ngOnInit() {
-        if (this._routeParams.get('id') != null) {
-            this.id = parseInt(this._routeParams.get('id'));
-        }
-
-        this.captura = { idChamada: null, email: "" };
 
         this.chamada = {
             'id': null,
+            'slug': "",
             'titulo': "",
             'texto': "",
             'midia': "",
             'aceitaInscricao': false
         };
-        this._chamadaService.findChamadaById(this.id).subscribe(res => this.chamada = res);
+
+        if (this._routeParams.get('slug') != null) {
+            this.slug = this._routeParams.get('slug');
+            this._chamadaService.findChamadaBySlug(this.slug).subscribe(res => this.chamada = res);
+        }
+
+        this.captura = { idChamada: null, email: "" };
+
     }
 
     onSubmit(captura: Captura): void {
 
         if (this.capturaForm.dirty && this.capturaForm.valid) {
-            this._chamadaService.capturar(this.id, captura.email);
+            //this._chamadaService.capturar(this.id, captura.email);
         }
     }
 

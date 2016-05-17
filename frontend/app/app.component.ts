@@ -28,7 +28,7 @@ import {AdminComponent}         from './admin/admin.component';
         useAsDefault: true
     },
     {
-        path: '/c/:id',
+        path: '/c/:slug',
         name: 'ChamadaDetail',
         component: ChamadaDetailComponent
     },

@@ -10,6 +10,13 @@
     </div>
 
     <div class="form-group label-floating">
+        <label class="control-label" for="slug">URL Amigável (Ex.: minha-url-amigavel)</label>
+        <input class="form-control" [(ngModel)]="chamada.slug" id="slug" type="text" ngControl="slug">
+        <control-messages control="slug"></control-messages>
+        <p class="help-block">Informe a URL amigável</p>
+    </div>
+
+    <div class="form-group label-floating">
         <label class="control-label" for="texto">Texto</label>
         <textarea rows="6" class="form-control" [(ngModel)]="chamada.texto" id="texto" ngControl="texto"></textarea>
         <control-messages control="texto"></control-messages>
