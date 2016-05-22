@@ -9,6 +9,7 @@ const tslint = require('gulp-tslint');
 const browserSync = require('browser-sync');
 const reload = browserSync.reload;
 const tsconfig = require('tsconfig-glob');
+const modRewrite  = require('connect-modrewrite');
 
 // clean the contents of the distribution directory
 gulp.task('clean', function () {
@@ -86,7 +87,12 @@ gulp.task('tsconfig-glob', function () {
 gulp.task('serve', ['build'], function() {
   browserSync({
     server: {
-      baseDir: 'dist/poderdarede'
+      baseDir: 'dist/poderdarede',
+      middleware: [
+          modRewrite([
+              '!\\.\\w+$ /index.html [L]'
+          ])
+      ]
     },
     open: 'external',
     host: 'localhost',
