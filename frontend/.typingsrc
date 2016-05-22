@@ -1,0 +1,2 @@
+proxy=http://cache.bb.com.br:80
+rejectUnauthorized=false

@@ -1,19 +1,40 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
-    "moduleResolution": "node",
+    "outDir": "dist/app",
+    "target": "ES5",
+    "module": "system",
     "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "moduleResolution": "node",
     "removeComments": false,
     "noImplicitAny": false,
-    "outDir": "dist/app"
-    //"outFile":"dist/App.js"
+    "suppressImplicitAnyIndexErrors": true
   },
-  "exclude": [
-    "node_modules",
-    "typings/main",
-    "typings/main.d.ts"
-  ]
+  "filesGlob": [
+    "poderdarede/app/**/*.ts",
+    "typings/browser.d.ts"
+  ],
+  "files": [
+    "poderdarede/app/admin/admin.component.ts",
+    "poderdarede/app/admin/chamada/captura.ts",
+    "poderdarede/app/admin/chamada/chamada-add.component.ts",
+    "poderdarede/app/admin/chamada/chamada-detail.component.ts",
+    "poderdarede/app/admin/chamada/chamada-list.component.ts",
+    "poderdarede/app/admin/chamada/chamada.component.ts",
+    "poderdarede/app/admin/chamada/chamada.service.ts",
+    "poderdarede/app/admin/chamada/chamada.ts",
+    "poderdarede/app/admin/chamada/control-messages.component.ts",
+    "poderdarede/app/admin/chamada/validation.service.ts",
+    "poderdarede/app/app.component.ts",
+    "poderdarede/app/config.ts",
+    "poderdarede/app/main.ts",
+    "poderdarede/app/paginas/pagina1.ts",
+    "poderdarede/app/paginas/pagina2.ts",
+    "poderdarede/app/pipe/nl2br.pipe.ts",
+    "typings/browser.d.ts"
+  ],
+  "atom": {
+    "rewriteTsconfig": true
+  }
 }
