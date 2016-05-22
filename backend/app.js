@@ -5,6 +5,7 @@ var routes = require('./routes/index');
 var lancamento = require('./routes/lancamento');
 var chamada = require('./routes/chamada');
 var captura = require('./routes/captura');
+var page = require('./routes/page');
 
 var bodyParser = require('body-parser');
 
@@ -29,10 +30,11 @@ app.use(bodyParser.json({ type: 'application/*+json' }))
 app.use(bodyParser.json());
 */
 
-app.use('/', routes);
-app.use('/lancamento', lancamento);
-app.use('/chamada', chamada);
-app.use('/captura', captura);
+app.use('/api/', routes);
+app.use('/api/lancamento', lancamento);
+app.use('/api/chamada', chamada);
+app.use('/api/captura', captura);
+app.use('/api/page', page);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
