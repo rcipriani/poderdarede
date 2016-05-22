@@ -12,7 +12,7 @@ import {ChamadaService} from './chamada.service';
 import {ControlMessages} from './control-messages.component';
 import {ValidationService} from './validation.service';
 
-import {Nl2BrPipe} from '../../pipe/nl2br.pipe';
+import {RcNl2BrPipe} from '../../pipe/rc-nl2br.pipe';
 
 @Component({
     templateUrl: './app/admin/chamada/chamada-detail.component.html',
@@ -21,7 +21,7 @@ import {Nl2BrPipe} from '../../pipe/nl2br.pipe';
         FORM_DIRECTIVES,
         ControlMessages
     ],
-    pipes: [Nl2BrPipe]
+    pipes: [RcNl2BrPipe]
 
 })
 export class ChamadaDetailComponent implements OnInit {

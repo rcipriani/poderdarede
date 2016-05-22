@@ -6,7 +6,7 @@ import {AppComponent}           from './app.component';
 import {ChamadaService}         from './admin/chamada/chamada.service';
 
 bootstrap(AppComponent, [
-    ROUTER_PROVIDERS, 
+    ROUTER_PROVIDERS,
     HTTP_PROVIDERS,
     ChamadaService
 ]);

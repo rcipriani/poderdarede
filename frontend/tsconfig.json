@@ -28,10 +28,14 @@
     "poderdarede/app/admin/chamada/validation.service.ts",
     "poderdarede/app/app.component.ts",
     "poderdarede/app/config.ts",
+    "poderdarede/app/configs/config.ts",
+    "poderdarede/app/directives/rc-bg-slide.directive.ts",
+    "poderdarede/app/directives/rc-go.directive.ts",
     "poderdarede/app/main.ts",
-    "poderdarede/app/paginas/pagina1.ts",
-    "poderdarede/app/paginas/pagina2.ts",
-    "poderdarede/app/pipe/nl2br.pipe.ts",
+    "poderdarede/app/pages/page/page.class.ts",
+    "poderdarede/app/pages/page/page.page.ts",
+    "poderdarede/app/pages/page/page.service.ts",
+    "poderdarede/app/pipe/rc-nl2br.pipe.ts",
     "typings/browser.d.ts"
   ],
   "atom": {

@@ -1,10 +1,10 @@
 import {Component, OnInit}      from '@angular/core';
 import { Router,
-        RouteConfig,
-        ROUTER_DIRECTIVES,
-        RouteParams }           from '@angular/router-deprecated';
-import {PaginaUm}               from './paginas/pagina1';
-import {PaginaDois}             from './paginas/pagina2';
+    RouteConfig,
+    ROUTER_DIRECTIVES,
+    RouteParams }           from '@angular/router-deprecated';
+
+import {PagePage}               from './pages/page/page.page';
 import {ChamadaComponent}       from './admin/chamada/chamada.component';
 import {ChamadaDetailComponent} from './admin/chamada/chamada-detail.component';
 import {AdminComponent}         from './admin/admin.component';
@@ -13,11 +13,7 @@ import {AdminComponent}         from './admin/admin.component';
 @Component({
     selector: 'app',
     templateUrl: './app/app.component.html',
-    directives: [ROUTER_DIRECTIVES],
-    providers: [
-        PaginaUm
-    ]
-
+    directives: [ROUTER_DIRECTIVES]
 })
 
 @RouteConfig([
@@ -33,20 +29,14 @@ import {AdminComponent}         from './admin/admin.component';
         component: ChamadaDetailComponent
     },
     {
-        path: '/pagina1',
-        name: 'PaginaUm',
-        component: PaginaUm
-    },
-    {
-        path: '/pagina2/:id',
-        name: 'PaginaDois',
-        component: PaginaDois
+        path: '/page/:slug',
+        name: 'PagePage',
+        component: PagePage
     }
 ])
 
 export class AppComponent implements OnInit {
-    title: string = 'Teste de app'
-
+    title: string = 'Poder da rede'
 
     constructor(private _router: Router) {
 
@@ -54,15 +44,5 @@ export class AppComponent implements OnInit {
 
     ngOnInit() {
 
-    }
-
-    gotoPaginaDois() {
-        console.log("entrou");
-        this._router.navigate(['PaginaDois', { id: 54321 }]);
-    }
-
-    listar() {
-        console.log("Clicou em listar3");
-        //this._router.navigate(['ChamadaList']);
     }
 }

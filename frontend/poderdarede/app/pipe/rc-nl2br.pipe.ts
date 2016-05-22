@@ -8,8 +8,8 @@ import { Pipe, PipeTransform } from '@angular/core';
  *   {{ 2 |  exponentialStrength:10}}
  *   formats to: 1024
 */
-@Pipe({name: 'nl2br'})
-export class Nl2BrPipe implements PipeTransform {
+@Pipe({name: 'rCnl2br'})
+export class RcNl2BrPipe implements PipeTransform {
   transform(value: string): string {
     console.log(value);
     return this.replaceAll(value, "\n", "<br>");

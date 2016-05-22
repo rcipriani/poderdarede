@@ -27,7 +27,7 @@
         <div class="col-sm-12">
             <h1 class="page-header">{{chamada.titulo}}</h1>
 
-            <p class="lead" [innerHTML]="chamada.texto | nl2br"></p>
+            <p class="lead" [innerHTML]="chamada.texto | rCnl2br"></p>
             <div class="embed-responsive embed-responsive-16by9">
                 <iframe class="embed-responsive-item" src="{{chamada.midia}}"></iframe>
             </div>
