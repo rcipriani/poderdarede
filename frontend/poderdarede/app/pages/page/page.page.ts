@@ -24,9 +24,11 @@ export class PagePage implements OnInit {
         private _pageService: PageService,
         private _routeParams: RouteParams) {
 
+          console.log("TesteEEEEEE11111111");
     }
 
     ngOnInit() {
+console.log("TesteEEEEEE");
 
         if (this._routeParams.get('slug') != null) {
 
@@ -38,11 +40,9 @@ export class PagePage implements OnInit {
                 'titulo': "",
                 'texto': "",
                 'html': "",
-                'midia': "blank.png",
-                apps: []
+                'midia': "blank.png"
             }
-
-            this._pageService.findPageBySlug(slug, true).subscribe(res => this.page = res);
+            this._pageService.findPageBySlug(slug).subscribe(res => this.page = res);
 
         }
 

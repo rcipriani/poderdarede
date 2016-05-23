@@ -4,7 +4,7 @@ import { FORM_DIRECTIVES,
     ControlGroup,
     Validators,
     AbstractControl } from '@angular/common';
-import {RouteParams} from '@angular/router-deprecated';
+import {RouteParams, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
 
 import {Chamada} from './chamada';
 import {Captura} from './captura';
@@ -13,13 +13,15 @@ import {ControlMessages} from './control-messages.component';
 import {ValidationService} from './validation.service';
 
 import {RcNl2BrPipe} from '../../pipe/rc-nl2br.pipe';
+import {RcGoDirective} from '../../directives/rc-go.directive';
 
 @Component({
     templateUrl: './app/admin/chamada/chamada-detail.component.html',
     styleUrls: ['./app/admin/chamada/chamada-detail.style.css'],
     directives: [
         FORM_DIRECTIVES,
-        ControlMessages
+        ControlMessages,
+        ROUTER_DIRECTIVES
     ],
     pipes: [RcNl2BrPipe]
 

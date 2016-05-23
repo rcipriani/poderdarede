@@ -1,7 +1,5 @@
-<!-- <div style="background: url('platinum/uploads/{{page.midia}}') no-repeat top; background-size: cover; background-position: center; min-height: 255px; max-height: 410px;"> -->
-<!-- 	<div class="container"></div> -->
-<!-- </div> -->
 <div class="container">
+	
 	<ol class="breadcrumb">
 		<li><a href="#">Portal USI</a></li>
 		<li>{{page.titulo}}</li>
@@ -14,14 +12,5 @@
 		</div>
 		<div>{{page.html}}</div>
 	</div>
-	<div class="row menu_contexto">
-		<div class="col-lg-12">
-			<h3 class="page-header">Aplicativos</h3>
-		</div>
-		<div class="col-md-12">
-			<div *ngFor="let app of page.apps" class="col-lg-3 col-md-4 col-sm-6">
-				<app-component [app]="app" [favoritos]="usuarioPreferenciaApps"></app-component>
-			</div>
-		</div>
-	</div>
+
 </div>

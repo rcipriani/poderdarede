@@ -1,11 +1,10 @@
 export class Page {
     id: number;
-	slug: string;
+    slug: string;
     titulo: string;
-	texto: string;
+    texto: string;
     html: string;
     midia: string;
-	apps: any[];
 
     constructor(
         id: number,
@@ -13,15 +12,13 @@ export class Page {
         titulo: string,
         texto: string,
         html: string,
-        midia: string,
-		apps: any[]
-    ){
+        midia: string
+    ) {
         this.id = id;
         this.slug = slug;
         this.titulo = titulo;
         this.texto = texto;
         this.html = html;
         this.midia = midia;
-		this.apps = apps;
     }
 }

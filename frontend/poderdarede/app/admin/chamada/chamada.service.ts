@@ -6,7 +6,7 @@ import 'rxjs/add/operator/share';
 import 'rxjs/add/operator/startWith';
 import 'rxjs/add/operator/map';
 import {Chamada} from './chamada';
-import {SERVER_URL} from '../../config';
+import {API_URL} from '../../configs/config';
 
 @Injectable()
 export class ChamadaService {
@@ -30,10 +30,9 @@ export class ChamadaService {
     constructor(private _http: Http) {
 
         this.count++;
-        console.log("count", this.count);
 
-        this._baseUrl = SERVER_URL + '/chamada';
-        this._capturaUrl = SERVER_URL + '/captura';
+        this._baseUrl = API_URL + '/chamada';
+        this._capturaUrl = API_URL + '/captura';
 
         this._dataStore = { chamadas: [], chamada: {
             'id': null,

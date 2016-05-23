@@ -2,6 +2,6 @@
 
 <ul>
     <li (click)="onSelect(chamada)" *ngFor="let chamada of chamadas | async">
-        <button (click)="deleteChamada(chamada)">[x]</button> <span>{{chamada.id}}</span> {{chamada.titulo}}
+        <button (click)="deleteChamada(chamada)">[x]</button> <span>{{chamada.id}}</span> {{chamada.titulo}} <button [routerLink]="['ChamadaDetail', {slug: 'teste-de-chamada'}]">[->]</button>
     </li>
 </ul>

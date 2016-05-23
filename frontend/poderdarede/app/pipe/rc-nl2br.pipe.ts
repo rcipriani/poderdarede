@@ -11,7 +11,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 @Pipe({name: 'rCnl2br'})
 export class RcNl2BrPipe implements PipeTransform {
   transform(value: string): string {
-    console.log(value);
     return this.replaceAll(value, "\n", "<br>");
   }
   private replaceAll(str, find, replace) {

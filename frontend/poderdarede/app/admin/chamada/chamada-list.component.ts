@@ -1,21 +1,22 @@
 import {Component, OnInit} from '@angular/core';
-import {ROUTER_DIRECTIVES, Router, RouteParams } from '@angular/router-deprecated';
+import {Router, RouteParams, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
 import {Observable} from 'rxjs/Observable';
 
 import {Chamada} from './chamada';
 import {ChamadaService} from './chamada.service';
+import {RcGoDirective} from '../../directives/rc-go.directive';
 
 @Component({
     selector: 'chamada-list',
     templateUrl: './app/admin/chamada/chamada-list.component.html',
-    directives: [ROUTER_DIRECTIVES]
+    directives: [RcGoDirective, ROUTER_DIRECTIVES]
 })
 export class ChamadaListComponent implements OnInit  {
 
     chamadas : Observable<Chamada[]>;
-    
+
     constructor(
-        private _router: Router, 
+        private _router: Router,
         private _chamadaService: ChamadaService
         ){
     }
@@ -27,9 +28,10 @@ export class ChamadaListComponent implements OnInit  {
     }
 
     onSelect(chamada: Chamada) {
+        console.log("teste");
         this._router.navigate(['ChamadaUpdate', { id: chamada.id }]);
     }
-    
+
     deleteChamada(chamada: Chamada){
         this._chamadaService.deleteChamada(chamada);
     }

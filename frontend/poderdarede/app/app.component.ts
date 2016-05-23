@@ -4,11 +4,10 @@ import { Router,
     ROUTER_DIRECTIVES,
     RouteParams }           from '@angular/router-deprecated';
 
-import {PagePage}               from './pages/page/page.page';
 import {ChamadaComponent}       from './admin/chamada/chamada.component';
 import {ChamadaDetailComponent} from './admin/chamada/chamada-detail.component';
 import {AdminComponent}         from './admin/admin.component';
-
+import {PagePage} from './pages/page/page.page';
 
 @Component({
     selector: 'app',
@@ -30,7 +29,12 @@ import {AdminComponent}         from './admin/admin.component';
     },
     {
         path: '/page/:slug',
-        name: 'PagePage',
+        name: 'Page',
+        component: PagePage
+    },
+    {
+        path: '/page/sobre-nos',
+        name: 'Page',
         component: PagePage
     }
 ])
